@@ -247,31 +247,45 @@ function switchView(name) {
 async function loadNews({force=false, query=""} = {}) {
   storyList.innerHTML = '<div class="loading-card">СОБИРАЕМ НОВОСТИ…</div>';
   try {
-    if (force) {
-      await fetch("/api/refresh",{method:"POST"});
-    }
-    const url = new URL("/api/news", location.origin);
-    url.searchParams.set("limit","50");
-    if (query) url.searchParams.set("q",query);
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("api");
+    const url = new URL("./data/news.json", location.href);
+    if (force) url.searchParams.set("t", String(Date.now()));
+    const response = await fetch(url, { cache: force ? "no-store" : "default" });
+    if (!response.ok) throw new Error("feed");
     const data = await response.json();
     stories = data.items?.length ? data.items : DEMO;
+
     updatedLabel.textContent = data.updatedAt
       ? "ОБНОВЛЕНО " + new Date(data.updatedAt).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})
       : "ДЕМО-ЛЕНТА";
+
     if (data.errors?.length) showToast("Часть источников временно недоступна");
+
+    renderCategories();
+    renderTabs();
+    renderDigest();
+    renderCalm();
+
+    if (query) {
+      const q = query.toLowerCase();
+      const matches = stories.filter(story =>
+        (story.title + " " + story.summary + " " + story.source + " " + story.category)
+          .toLowerCase()
+          .includes(q)
+      );
+      renderFeed(matches);
+    } else {
+      renderFeed();
+    }
   } catch (_) {
     stories = DEMO;
-    updatedLabel.textContent = "ДЕМО · СЕРВЕР НЕДОСТУПЕН";
-    showToast("Показываю демо-ленту");
+    updatedLabel.textContent = "ДЕМО · ОБНОВЛЕНИЕ ЕЩЁ НЕ ПРИШЛО";
+    renderCategories();
+    renderTabs();
+    renderFeed();
+    renderDigest();
+    renderCalm();
+    showToast("Пока показываю демо-ленту");
   }
-
-  renderCategories();
-  renderTabs();
-  renderFeed();
-  renderDigest();
-  renderCalm();
 }
 
 document.querySelectorAll(".bottom-nav button").forEach(button => {
