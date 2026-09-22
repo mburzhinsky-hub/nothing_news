@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* TactileCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000001 /* TactileCameraApp.swift */; };
+		B00000000000000000000002 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000002 /* CameraScreen.swift */; };
+		B00000000000000000000003 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000003 /* CameraManager.swift */; };
+		B00000000000000000000004 /* FilterPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000004 /* FilterPreset.swift */; };
+		B00000000000000000000005 /* HapticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* HapticsEngine.swift */; };
+		B00000000000000000000006 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000006 /* SoundEngine.swift */; };
+		B00000000000000000000007 /* MotionLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000007 /* MotionLighting.swift */; };
+		B00000000000000000000008 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000008 /* SettingsView.swift */; };
+		B00000000000000000000009 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000009 /* CameraPreview.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F00000000000000000000001 /* TactileCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileCameraApp.swift; sourceTree = "<group>"; };
+		F00000000000000000000002 /* CameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreen.swift; sourceTree = "<group>"; };
+		F00000000000000000000003 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		F00000000000000000000004 /* FilterPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPreset.swift; sourceTree = "<group>"; };
+		F00000000000000000000005 /* HapticsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsEngine.swift; sourceTree = "<group>"; };
+		F00000000000000000000006 /* SoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngine.swift; sourceTree = "<group>"; };
+		F00000000000000000000007 /* MotionLighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionLighting.swift; sourceTree = "<group>"; };
+		F00000000000000000000008 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F00000000000000000000009 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		F0000000000000000000000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0000000000000000000000B /* TactileCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		070000000000000000000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		020000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000010 /* TactileCamera */,
+				030000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		030000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000B /* TactileCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000010 /* TactileCamera */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000001 /* TactileCameraApp.swift */,
+				F00000000000000000000002 /* CameraScreen.swift */,
+				F00000000000000000000003 /* CameraManager.swift */,
+				F00000000000000000000004 /* FilterPreset.swift */,
+				F00000000000000000000005 /* HapticsEngine.swift */,
+				F00000000000000000000006 /* SoundEngine.swift */,
+				F00000000000000000000007 /* MotionLighting.swift */,
+				F00000000000000000000008 /* SettingsView.swift */,
+				F00000000000000000000009 /* CameraPreview.swift */,
+				F0000000000000000000000A /* Info.plist */,
+			);
+			path = TactileCamera;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		050000000000000000000005 /* TactileCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A000000000000000000000A /* Build configuration list for PBXNativeTarget "TactileCamera" */;
+			buildPhases = (
+				060000000000000000000006 /* Sources */,
+				070000000000000000000007 /* Frameworks */,
+				080000000000000000000008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TactileCamera;
+			productName = TactileCamera;
+			productReference = F0000000000000000000000B /* TactileCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		010000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					050000000000000000000005 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 090000000000000000000009 /* Build configuration list for PBXProject "TactileCamera" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 020000000000000000000002;
+			productRefGroup = 030000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				050000000000000000000005 /* TactileCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		080000000000000000000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		060000000000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000001 /* TactileCameraApp.swift in Sources */,
+				B00000000000000000000002 /* CameraScreen.swift in Sources */,
+				B00000000000000000000003 /* CameraManager.swift in Sources */,
+				B00000000000000000000004 /* FilterPreset.swift in Sources */,
+				B00000000000000000000005 /* HapticsEngine.swift in Sources */,
+				B00000000000000000000006 /* SoundEngine.swift in Sources */,
+				B00000000000000000000007 /* MotionLighting.swift in Sources */,
+				B00000000000000000000008 /* SettingsView.swift in Sources */,
+				B00000000000000000000009 /* CameraPreview.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0B000000000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0C000000000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0D000000000000000000000D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TactileCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mburzhinsky.TactileCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0E000000000000000000000E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TactileCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.mburzhinsky.TactileCamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		090000000000000000000009 /* Build configuration list for PBXProject "TactileCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B000000000000000000000B /* Debug */,
+				0C000000000000000000000C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A000000000000000000000A /* Build configuration list for PBXNativeTarget "TactileCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D000000000000000000000D /* Debug */,
+				0E000000000000000000000E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 010000000000000000000001 /* Project object */;
+}

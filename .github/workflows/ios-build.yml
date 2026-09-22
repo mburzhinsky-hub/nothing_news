@@ -1,0 +1,22 @@
+name: iOS build
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild \
+            -project TactileCamera.xcodeproj \
+            -scheme TactileCamera \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
