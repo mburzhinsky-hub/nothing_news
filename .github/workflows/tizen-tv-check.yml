@@ -1,0 +1,23 @@
+name: Tizen TV check
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "tizen-tv/**"
+      - ".github/workflows/tizen-tv-check.yml"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check JavaScript syntax
+        run: node --check tizen-tv/app.js
+      - name: Check required project files
+        run: |
+          test -f tizen-tv/config.xml
+          test -f tizen-tv/index.html
+          test -f tizen-tv/styles.css
+          test -f tizen-tv/icon.png

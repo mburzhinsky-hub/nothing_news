@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#06111a">
+  <title>Glyph Weather TV</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" class="app weather-rain style-dots">
+    <canvas id="fx" width="1920" height="1080"></canvas>
+
+    <header class="topbar">
+      <div class="place-block">
+        <div id="cityLabel" class="city">MOSCOW</div>
+        <div id="conditionLabel" class="condition">RAIN</div>
+      </div>
+      <div class="clock-block">
+        <div id="dateLabel" class="date">MON, 14 APR</div>
+        <div id="timeLabel" class="time">22:37</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="weather-glyph-wrap">
+        <svg id="weatherGlyph" class="weather-glyph" viewBox="0 0 700 500" aria-hidden="true"></svg>
+      </div>
+      <div class="temperature-wrap">
+        <div id="temperatureGlyph" class="temperature-glyph" aria-label="Температура"></div>
+      </div>
+    </section>
+
+    <section id="forecast" class="forecast" aria-label="Прогноз на пять дней"></section>
+
+    <div class="footer-hint">
+      <span id="updateLabel">WEATHER ONLINE</span>
+      <span>OK · SETTINGS</span>
+    </div>
+
+    <aside id="settingsPanel" class="settings" aria-hidden="true">
+      <div class="settings-head">
+        <span>DISPLAY SETTINGS</span>
+        <span>OK · SELECT</span>
+      </div>
+      <div id="settingsList" class="settings-list"></div>
+      <div class="settings-foot">← → CHANGE · ↑ ↓ MOVE · BACK CLOSE</div>
+    </aside>
+
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
