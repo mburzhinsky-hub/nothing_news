@@ -1,0 +1,10 @@
+{
+  "name": "Nothing News",
+  "short_name": "News",
+  "description": "Minimal Russian-language news reader",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050607",
+  "theme_color": "#050607"
+}

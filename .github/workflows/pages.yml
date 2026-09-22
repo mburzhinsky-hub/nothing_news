@@ -1,27 +1,31 @@
-name: Refresh news and deploy Pages
+name: Refresh news feed
 
 on:
   push:
     branches: ["main"]
+    paths:
+      - "scripts/update_news.py"
+      - "config/sources.json"
+      - ".github/workflows/pages.yml"
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: nothing-news-pages
-  cancel-in-progress: true
+  group: nothing-news-refresh
+  cancel-in-progress: false
 
 jobs:
-  build:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -31,21 +35,14 @@ jobs:
       - name: Refresh news
         run: python scripts/update_news.py
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Commit refreshed feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news.json public/data/news.json
+          if git diff --cached --quiet; then
+            echo "No feed changes"
+            exit 0
+          fi
+          git commit -m "Refresh news feed"
+          git push

@@ -10,7 +10,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES_PATH = ROOT / "config" / "sources.json"
-OUTPUT_PATH = ROOT / "public" / "data" / "news.json"
+OUTPUT_PATHS = [
+    ROOT / "data" / "news.json",
+    ROOT / "public" / "data" / "news.json"
+]
 MAX_PER_SOURCE = 35
 MAX_ITEMS = 120
 
@@ -177,9 +180,11 @@ def main():
         "errors": errors
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[done] wrote {len(items)} stories to {OUTPUT_PATH}")
+    encoded = json.dumps(payload, ensure_ascii=False, indent=2)
+    for output_path in OUTPUT_PATHS:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(encoded, encoding="utf-8")
+        print(f"[done] wrote {len(items)} stories to {output_path}")
 
 if __name__ == "__main__":
     main()
